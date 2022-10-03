@@ -200,13 +200,11 @@ And to evaluate the performance of each model, the following error metrics were 
 
 <img src="image/model_performance_all_features.png" width="500">
 
-*Results with Cross Validation (CV)*
-
 ### 6.1 Time Features
 
 <img src="image/model_performance_time_features.png" width="500">
 
-*Results with Cross Validation (CV)*
+**Note:** the above results were obtained with Cross-Validation (CV). It was done by defining 3 different validation periods (each one with 3 months) and defining the test period as the interval before the validation period. Because it is a time series model, the Cross Validation cannot be done by randomly defining intervals.
 
 [Back to the top](https://github.com/vitorhmf/irish-sea#2-data-pipeline)
 
@@ -248,6 +246,11 @@ As the case was not applied to a specific business, it would be necessary to dee
 [Back to the top](https://github.com/vitorhmf/irish-sea#2-data-pipeline)
 
 ## 10. References
+
+* [IBM Docs](https://www.ibm.com/docs/en/spss-modeler/18.2.0?topic=dm-crisp-help-overview)
+* [Reference: OD Malin](https://en.wikipedia.org/wiki/Ordnance_datum)
+* [Reference: LAT](https://en.wikipedia.org/wiki/Chart_datum)
+* [DigitalOcean.ie](https://www.digitalocean.ie/Home/About)
 
 [Back to the top](https://github.com/vitorhmf/irish-sea#2-data-pipeline)
 
