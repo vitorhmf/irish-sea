@@ -81,7 +81,7 @@ From this dataset was developed analysis about temperature and wave height. It i
 | mean_cur_speed             | Wave Speed (in m/s)                                           |               
 | mean_cur_dir_to            | object                                                        | 
 
-[Back to the top](https://github.com/vitorhmf/irish-sea#2-methodology)
+[Back to the top](https://github.com/vitorhmf/irish-sea#2-data-pipeline)
 
 
 ## 4. Data Understanding
@@ -93,12 +93,11 @@ To build an overview of the data, the following steps were performed:
 * Shows the data dimensions (rows and columns);
 * Understand the description of each feature;
 * Check and Fillout NA:
-  - Tide Data: this dataset presents two ways to measure the water level: by LAT and by OD Malin. The LAT had 14% missing values and as the OD Malin was complete I decided to eliminate the LAT column;
-  - Wave Data: Two collection stations did not present information in the defined period; Three stations had no values in the hmax, mean_cur_speed and mean_cur_dir_to columns, so these 3 columns were dropped. Finally, the missing values that remained were due to the difference between the information collection periods in which case the remaining NAs were removed.
+  - **Tide Data:** this dataset presents two ways to measure the water level: by LAT and by OD Malin. The LAT had 14% missing values and as the OD Malin was complete I decided to eliminate the LAT column;
+  - **Wave Data:** Two collection stations did not present information in the defined period; Three stations had no values in the hmax, mean_cur_speed and mean_cur_dir_to columns, so these 3 columns were dropped. Finally, the missing values that remained were due to the difference between the information collection periods in which case the remaining NAs were removed.
 * Change Types;
 
-
-### 4.3 Basic Description of Data: 
+### 4.2 Basic Description of Data: 
 
 A quick descriptive analysis of the numerical and categorical variables was performed to assist in the prior understanding of the data.
  
@@ -121,7 +120,7 @@ Numbers of records per collection station:
 * Water Level:
 <img src="image/cat_attributes_tide.png" width="300">
 
-### 4.4 Feature Engineering
+### 4.3 Feature Engineering
 
 * Time-derived features: date, year, month, year_month, day_of_month, day_of_week, hour
 
@@ -135,8 +134,7 @@ Analyzing the Portmore Pier in-depth, we can see that it was about 5 months with
 
 <img src="image/data_filtering2.png" width="800">
 
-
-### 4.6 Exploratory Data Analysis
+### 4.5 Exploratory Data Analysis
 
 In this project, the EDA was developed with the main objective of answering the questions presented in the case.
 
@@ -163,7 +161,7 @@ This indicates that using only this feature and the buoy position, it would not 
 
 <img src="image/eda_q3.png" width="800">
 
-[Back to the top](https://github.com/vitorhmf/irish-sea#2-methodology)
+[Back to the top](https://github.com/vitorhmf/irish-sea#2-data-pipeline)
 
 
 ## 5. Data Preparation
@@ -184,7 +182,7 @@ In the first version of the model, the Boruta algorithm was used to indicate the
 
 **Note:** thinking about a practical application for the predictive model, where users would only have information about the date, time and place where they would like to see the temperature forecast, a new model was built using only these features
 
-[Back to the top](https://github.com/vitorhmf/irish-sea#2-methodology)
+[Back to the top](https://github.com/vitorhmf/irish-sea#2-data-pipeline)
 
 
 ## 6. Machine Learning Modeling
@@ -202,44 +200,55 @@ And to evaluate the performance of each model, the following error metrics were 
 
 <img src="image/model_performance_all_features.png" width="500">
 
-*Results with Cross Validation (CV)
+*Results with Cross Validation (CV)*
 
 ### 6.1 Time Features
 
 <img src="image/model_performance_time_features.png" width="500">
 
-*Results with Cross Validation (CV)
+*Results with Cross Validation (CV)*
 
-[Back to the top](https://github.com/vitorhmf/irish-sea#2-methodology)
+[Back to the top](https://github.com/vitorhmf/irish-sea#2-data-pipeline)
 
 ## 7. Evaluation
 
 For the final evaluation of the model, we will proceed with the version in which only the date, time and location variables are used and we will use the linear regression model algorithm.
 
+<img src="image/evaluation.png" width="800">
 
+Comparing the temperature records present in the validation dataset with the values predicted by the linear regression model, it is clear that this is not a very accurate result and that, depending on the practical application of this model, it will be necessary to improve this modeling.
 
-[Back to the top](https://github.com/vitorhmf/irish-sea#2-methodology)
+[Here](https://github.com/vitorhmf/irish-sea/blob/main/notebook/wave_analysis_v02.ipynb) you can check the complete code.
+
+[Back to the top](https://github.com/vitorhmf/irish-sea#2-data-pipeline)
+
 
 ## 8. Deployment
 
 
 
-[Back to the top](https://github.com/vitorhmf/irish-sea#2-methodology)
+* **S3:** used to save the datasets collected in the portal
+* **RDS:** used to create and store the Irish-sea Database, where the collected information was organised.
+
+
+[Back to the top](https://github.com/vitorhmf/irish-sea#2-data-pipeline)
 
 ## 9. Conclusion
 
 ### 9.1. Business Results
 
+As the case was not applied to a specific business, it would be necessary to deepen the discussion to find out what return an analysis like this could bring.
+
 ### 9.2. Next Steps
 
 * Improve model results 
 * Search for an API to collect data in the portal
-* Develop a deploy to consult the temperature prediction. For example, a bot on Telegram.
+* Develop a deployment to query the temperature forecast. For example, a telegram bot guiding fishermen about sea temperature.
 
-[Back to the top](https://github.com/vitorhmf/irish-sea#2-methodology)
+[Back to the top](https://github.com/vitorhmf/irish-sea#2-data-pipeline)
 
 ## 10. References
 
-[Back to the top](https://github.com/vitorhmf/irish-sea#2-methodology)
+[Back to the top](https://github.com/vitorhmf/irish-sea#2-data-pipeline)
 
 
