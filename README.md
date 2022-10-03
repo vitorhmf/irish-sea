@@ -241,7 +241,7 @@ As the case was not applied to a specific business, it would be necessary to dee
 
 * Improve model results 
 * Search for an API to collect data in the portal
-* Develop a deployment to query the temperature forecast. For example, a telegram bot guiding fishermen about sea temperature.
+* Develop a deployment to query the temperature prediction. For example, a telegram bot guiding fishermen about sea temperature.
 
 [Back to the top](https://github.com/vitorhmf/irish-sea#2-data-pipeline)
 
