@@ -225,7 +225,7 @@ Comparing the temperature records present in the validation dataset with the val
 
 ## 8. Deployment
 
-
+A basic Data Engineering was made using the AWS services:
 
 * **S3:** used to save the datasets collected in the portal
 * **RDS:** used to create and store the Irish-sea Database, where the collected information was organised.
